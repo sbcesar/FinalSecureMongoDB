@@ -8,22 +8,50 @@ Es una aplicación sencilla en la que se gestionarán las tareas de casa. Tambi�
 ### DESCRIPCIÓN DETALLADA
 Los documentos que compondrán esta aplicación son:
 1. Usuarios
-   2. username: String (nombre del usuario)
-   3. password: String (contraseña del usuario)
-   4. roles: Rol (Enum class con los roles: USER, ADMIN)
-   5. direccion: Direccion (dirección del usuario)
+   1. username: String (nombre del usuario)
+   2. password: String (contraseña del usuario)
+   3. roles: Rol (Enum class con los roles: USER, ADMIN)
+   4. direccion: Direccion (dirección del usuario)
    5. tareas: List<Tareas> (tareas que tiene el usuario)
 2. Dirección
-   3. calle: String (nombre de la calle)
-   4. num: Int (número del hogar)
-   5. provicia: String (provincia del usuario)
-   6. municipio: String (municipio del usuario)
-   7. cp: Int (código postal del usuario)
+   1. calle: String (nombre de la calle)
+   2. num: Int (número del hogar)
+   3. provicia: String (provincia del usuario)
+   4. municipio: String (municipio del usuario)
+   5. cp: Int (código postal del usuario)
 3. Tarea
-   4. titulo: String (titulo de la tarea)
-   5. descripcion: String (breve descripcion de la tarea)
-   6. estado: String (estado de la tarea PENDIENTE/COMPLETADO)
-   7. usuario: Usuario (usuario propietario de la tarea)
+   1. titulo: String (titulo de la tarea)
+   2. descripcion: String (breve descripcion de la tarea)
+   3. estado: String (estado de la tarea PENDIENTE/COMPLETADO)
+   4. usuario: Usuario (usuario propietario de la tarea)
+
+###  ENDPOINTS
+
+ * Usuarios {/usuarios}
+   * register {/register} -> Registra a un usuario en la bd
+   * login {/login} -> Inicia sesion
+ * Tareas {/tareas}
+   * seeAllTasks {/show} -> Muestra todas las tareas
+   * seeTaskById {/show/{id}} -> Muestra la tarea por id
+   * createTask {/create} -> Da de alta una tarea
+   * updateTask {/update} -> Actualiza los datos de una tarea
+   * completeTask {/complete/{id}} -> Marca una tarea como completada
+   * deleteTask {/delete/{id}} -> Borra una tarea
+
+### EXCEPCIONES
+
+ * 400 - BadRequestException: Indica que el servidor no puede cumplir con las solicitudes debido a un error por parte del cliente
+ * 401 - UnauthorizedException: Indica que el So deniega el acceso debido a un error de seguridad
+ * 404 - NotFoundException: Indica que el recurso solicitado por el cliente no se encuentra en el servidor
+
+### RESTRICCIONES DE SEGURIDAD
+
+Para "privar" a los usuarios de cualquier accion he decidido implementar un sistema de roles compuesto por dos tipos:
+ * ADMIN (tiene acceso a ver, eliminar y dar de alta cualquier tarea de cualquier usuario)
+ * USER (el resto de funciones que no sean las de admin)
+
+Además, se utilizará cifrado asimétrico con clave pública y clave privada, junto con JWT (JSON Web Token), para el control de acceso.
+
 
 ### SCREENSHOTS INICIALES
 
