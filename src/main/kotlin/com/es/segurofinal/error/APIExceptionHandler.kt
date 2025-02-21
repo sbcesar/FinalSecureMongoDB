@@ -1,6 +1,7 @@
 package com.es.segurofinal.error
 
 import com.es.segurofinal.error.exception.UnauthorizedException
+import com.es.segurofinal.error.exception.ValidationException
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ControllerAdvice
@@ -27,4 +28,12 @@ class APIExceptionHandler {
         e.printStackTrace()
         return ErrorRespuesta(e.message!!, request.requestURI)
     }
+
+    @ExceptionHandler(ValidationException::class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    fun handleValidationException(request: HttpServletRequest, e: ValidationException): ErrorRespuesta {
+        return ErrorRespuesta(e.message!!, request.requestURI)
+    }
+
 }

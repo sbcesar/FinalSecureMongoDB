@@ -2,6 +2,7 @@ package com.es.segurofinal.utils
 
 import com.es.segurofinal.dto.UsuarioRegisterDTO
 import com.es.segurofinal.error.exception.ValidationException
+import com.es.segurofinal.models.Role
 
 object Utils {
 
@@ -12,5 +13,10 @@ object Utils {
             || usuarioRegisterDTO.roles == null) {
             throw ValidationException("Uno o mas campos vacíos")
         }
+
+        if (usuarioRegisterDTO.password != usuarioRegisterDTO.passwordRepeat) {
+            throw ValidationException("Las contraseñas no son iguales")
+        }
+
     }
 }

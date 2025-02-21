@@ -28,11 +28,6 @@ class UsuarioController {
     @Autowired
     private lateinit var tokenService: TokenService
 
-    @GetMapping("/")
-    fun getAllUsers(): String {
-        return "hola uwu"
-    }
-
     @PostMapping("/register")
     fun register(
         httpRequest: HttpServletRequest,
