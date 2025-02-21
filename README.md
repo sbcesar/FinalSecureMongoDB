@@ -60,49 +60,49 @@ Además, se utilizará cifrado asimétrico con clave pública y clave privada, j
  
 Esta es una imagen de un registro válido (USER)
 
-!["Foto de un registro válido"](src/main/resources/documentation/registro valido.png)
+!["Foto de un registro válido"](src/main/resources/documentation/registro%20valido.png)
 
 Esta es la confirmación del registro válido previo
 
-!["Foto de la confirmación de un registro válido"](src/main/resources/documentation/confirmado registro valido.png)
+!["Foto de la confirmación de un registro válido"](src/main/resources/documentation/confirmado%20registro%20valido.png)
 
 Esta es una imagen de un registro válido (ADMIN)
 
-!["Foto de un registro valido"](src/main/resources/documentation/usuario admin creado.png)
+!["Foto de un registro valido"](src/main/resources/documentation/usuario%20admin%20creado.png)
 
 Esta es la confirmación del registro válido previo
 
-!["Foto de la confirmación de un registro válido"](src/main/resources/documentation/confirmacion admin creado.png)
+!["Foto de la confirmación de un registro válido"](src/main/resources/documentation/confirmacion%20admin%20creado.png)
 
 Esta es una imagen con un registro inválido (municipio no encontrado)
 
-!["Foto de una peticion invalida](src/main/resources/documentation/registro invalido municipio erroneo.png)
+!["Foto de una peticion invalida](src/main/resources/documentation/registro%20invalido%20municipio%20erroneo.png)
 
 Esta es una imagen con un registro inválido (campo vacio)
 
-!["Foto de una peticion invalida"](src/main/resources/documentation/registro invalido campo vacio.png)
+!["Foto de una peticion invalida"](src/main/resources/documentation/registro%20invalido%20campo%20vacio.png)
 
 Esta es una imagen con un registro inválido (contraseñas desiguales)
 
-!["Foto de una peticion invalida"](src/main/resources/documentation/contraseñas no iguales.png)
+!["Foto de una peticion invalida"](src/main/resources/documentation/contraseñas%20no%20iguales.png)
 
  * login (localhost:8081/usuario/login)
 
 Esta es una imagen de un login válido (USER)
 
-![""](src/main/resources/documentation/login correcto user.png)
+![""](src/main/resources/documentation/login%20correcto%20user.png)
 
 Esta es una imagen de un login válido (ADMIN)
 
-![""](src/main/resources/documentation/LOGIN CORRECTO ADMIN.png)
+![""](src/main/resources/documentation/LOGIN%20CORRECTO%20ADMIN.png)
 
 Esta es una imagen de un login inválido (usuario no encontrado)
 
-![""](src/main/resources/documentation/usuario no encontrado.png)
+![""](src/main/resources/documentation/usuario%20no%20encontrado.png)
 
 Esta es una imagen de un login inválido (contraseña incorrecta)
 
-![""](src/main/resources/documentation/contraseña incorrecta.png)
+![""](src/main/resources/documentation/contraseña%20incorrecta.png)
 
 ### SCREENSHOTS INICIALES
 
