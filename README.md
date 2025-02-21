@@ -56,8 +56,8 @@ Además, se utilizará cifrado asimétrico con clave pública y clave privada, j
 ### SCREENSHOTS INICIALES
 
 * Datos del Spring Initializr
-!["Foto de los datos de spring initializr"](spring_initializr.png)
+!["Foto de los datos de spring initializr"](src/main/resources/documentation/spring_initializr.png)
 * Colaborador Lainezz Añadido
-!["Foto de como añado un colaborador](collaborator.png)
+!["Foto de como añado un colaborador](src/main/resources/documentation/collaborator.png)
 * Base de datos creada en MongoDB
-!["Foto de la base de datos creada en MongoDB"](base%20de%20datos%20de%20mongo.png)
+!["Foto de la base de datos creada en MongoDB"](src/main/resources/documentation/base%20de%20datos%20de%20mongo.png)
