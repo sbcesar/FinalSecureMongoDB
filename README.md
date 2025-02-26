@@ -108,41 +108,49 @@ Esta es una imagen de un login inválido (contraseña incorrecta)
 
 * seeAllTasks (/tareas/show)
 
-Ver todas las tareas rol **USER** (Forbidden) -- Funciona
+Ver todas las tareas rol **USER** (Forbidden)
 
-![""]()
+!["Login user"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20login%20user.png)
 
-Ver todas las tareas rol **ADMIN** -- Funciona
+Ver todas las tareas rol **ADMIN**
 
-![""]()
+!["Login Admin"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20login%20admin.png)
 
-Ver todas las tareas rol **ADMIN** (Unauthorized) -- Funciona
+Ver todas las tareas rol **ADMIN** (Unauthorized)
 
-![""]()
+!["No pones token"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20no%20toke.png)
 
 * getMyTasks (/tareas/showTask)
 
-Ver mis tareas rol **USER** -- Funciona
+Ver mis tareas rol **USER**
 
-![""]()
+!["Muestra solo las del usuario registrado"](src/main/resources/documentation/Mostrar%20tarea%20propia%20login%20user.png)
 
 Ver mis tareas rol **USER** (no propietario) -- Funciona porque solo puedo ver las del propio usuario logueado
 
 * createTask (/tareas/create)
 
-Tarea creada con usuario **ADMIN** -- Funciona
+Tarea creada con usuario **ADMIN**
+
+!["Se loguea como admin"](src/main/resources/documentation/Tarea%20creada%20con%20usuario%20admin.png)
+
+Tarea creada con usuario **ADMIN** (se usa el id de otro usuario) -- No funciona, revisar porque usa el usuario admin, no el que introduces
 
 ![""]()
 
-Tarea creada con usuario **ADMIN** (se usa el id de otro usuario) -- Funciona
+Tarea creada con usuario **ADMIN** (campos vacios) (menos en estado)
 
-![""]()
+!["Falta titulo"](src/main/resources/documentation/tarea%20creada%20usuario%20vacio.png)
 
-Tarea creada con usuario **ADMIN** (campos vacios) -- Funciona (menos en estado)
+!["Falta descripcion"](src/main/resources/documentation/tarea%20creada%20descripcion%20vacia.png)
 
-![""]()
+!["Falta id de usuario"](src/main/resources/documentation/tarea%20creada%20usuario%20id%20vacio.png)
 
-Tarea creada con usuario **USER** -- Funciona
+Tarea creada con usuario **USER**
+
+![""](src/main/resources/documentation/tarea%20creada%20con%20user.png)
+
+Tarea creada con usuario **USER** (se usa id de otro usuario) -- No funciona,pilla el usuario que esta registrado, no el nuevo
 
 ![""]()
 
@@ -151,36 +159,36 @@ Tarea creada con usuario **USER** -- Funciona
 
 * completeTask (/tareas/complete/{id})
 
-Completar una tarea **USER** (Forbidden) -- Funciona
+Completar una tarea **USER** (Forbidden) (no es suya)
 
-![""]()
+!["Login con rol user pilla una tarea que no es suya"](src/main/resources/documentation/completar%20tarea%20login%20user%20id%20otro%20user.png)
 
-Completar una tarea **USER** -- Funciona
+Completar una tarea **USER** (si es suya)
 
-![""]()
+!["Login con rol user pilla una tarea que si es suya"](src/main/resources/documentation/completar%20tarea%20login%20user.png)
 
-Completar una tarea **USER** (Conflict) -- Funciona
+Completar una tarea **USER** (Conflict)
 
-![""]()
+!["Intenta completar una tarea ya completada"](src/main/resources/documentation/completar%20tarea%20completada.png)
 
-Completar una tarea **ADMIN** -- Funciona
+Completar una tarea **ADMIN**
 
-![""]()
+!["Admin completa una tarea"](src/main/resources/documentation/admin%20completa%20tarea.png)
 
 
 * deleteTask (/tareas/delete/{id})
 
-Borrar tarea **ADMIN** -- Funciona
+Borrar tarea **ADMIN**
 
-![""]()
+!["Admin borra una tarea"](src/main/resources/documentation/admin%20borra%20tarea.png)
 
-Borrar tarea **USER** otro usuario (Unauthorized) -- Funciona
+Borrar tarea **USER** otro usuario (Unauthorized)
 
-![""]()
+!["Usuario borra una tarea que no es suya"](src/main/resources/documentation/user%20borra%20tarea%20no%20es%20suya.png)
 
-Borrar tarea **USER** -- Funciona
+Borrar tarea **USER**
 
-![""]()
+!["Usuario borra tarea propia"](src/main/resources/documentation/user%20borra%20tarea.png)
 
 
 
