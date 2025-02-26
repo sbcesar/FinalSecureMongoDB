@@ -51,7 +51,6 @@ class SecurityConfig {
                 // Usuario con rol ADMIN
                 .requestMatchers(HttpMethod.GET, "/tareas/show").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/tareas/delete/{id}").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.POST, "/tareas/create").hasRole("ADMIN")
 
                 .anyRequest().authenticated()
 

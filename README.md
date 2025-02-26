@@ -90,19 +90,106 @@ Esta es una imagen con un registro inválido (contraseñas desiguales)
 
 Esta es una imagen de un login válido (USER)
 
-![""](src/main/resources/documentation/login%20correcto%20user.png)
+!["Foto de un login válido"](src/main/resources/documentation/login%20correcto%20user.png)
 
 Esta es una imagen de un login válido (ADMIN)
 
-![""](src/main/resources/documentation/LOGIN%20CORRECTO%20ADMIN.png)
+!["Foto de un login válido"](src/main/resources/documentation/LOGIN%20CORRECTO%20ADMIN.png)
 
 Esta es una imagen de un login inválido (usuario no encontrado)
 
-![""](src/main/resources/documentation/usuario%20no%20encontrado.png)
+!["Foto de un login inválido"](src/main/resources/documentation/usuario%20no%20encontrado.png)
 
 Esta es una imagen de un login inválido (contraseña incorrecta)
 
-![""](src/main/resources/documentation/contraseña%20incorrecta.png)
+!["Foto de un login inválido"](src/main/resources/documentation/contraseña%20incorrecta.png)
+
+#### TAREAS
+
+* seeAllTasks (/tareas/show)
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+* getMyTasks (/tareas/showTask)
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+* createTask (/tareas/create)
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+* updateTask (/tareas/update)
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+* completeTask (/tareas/complete/{id})
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+* deleteTask (/tareas/delete/{id})
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
+![""]()
+
 
 ### SCREENSHOTS INICIALES
 
