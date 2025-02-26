@@ -31,7 +31,9 @@ object Utils {
 
     fun verificarDatosTarea(tarea: TareaDTO, usuario: Usuario?) {
         if (tarea.titulo.isBlank()
-            || tarea.descripcion.isBlank()) {
+            || tarea.descripcion.isBlank()
+            || tarea.estado.name.isBlank()
+            || tarea.usuarioId.isBlank()) {
             throw ValidationException("Uno o mas campos de tarea vacíos")
         }
 

@@ -44,13 +44,12 @@ class SecurityConfig {
 
                 // Usuario con rol USER
                 .requestMatchers(HttpMethod.GET, "/tareas/showTask").hasRole("USER")
-                .requestMatchers(HttpMethod.PUT, "/tareas/complete/{id}").hasRole("USER")
-                .requestMatchers(HttpMethod.DELETE, "/tareas/delete/{id}").hasRole("USER")
+                .requestMatchers(HttpMethod.PUT, "/tareas/complete/{id}").hasAnyRole("USER", "ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/tareas/delete/{id}").hasAnyRole("USER", "ADMIN")
                 .requestMatchers(HttpMethod.POST, "/tareas/create").hasAnyRole("USER", "ADMIN")
 
                 // Usuario con rol ADMIN
                 .requestMatchers(HttpMethod.GET, "/tareas/show").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/tareas/delete/{id}").hasRole("ADMIN")
 
                 .anyRequest().authenticated()
 

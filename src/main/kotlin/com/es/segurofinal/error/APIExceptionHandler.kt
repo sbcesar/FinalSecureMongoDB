@@ -1,12 +1,14 @@
 package com.es.segurofinal.error
 
 import com.es.segurofinal.error.exception.ConflictException
+import com.es.segurofinal.error.exception.ForbiddenException
 import com.es.segurofinal.error.exception.UnauthorizedException
 import com.es.segurofinal.error.exception.ValidationException
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.ResponseStatus
 import javax.naming.AuthenticationException
@@ -48,6 +50,13 @@ class APIExceptionHandler {
     @ResponseStatus(HttpStatus.CONFLICT)
     @ResponseBody
     fun handleConflictException(request: HttpServletRequest, e: Exception) : ErrorRespuesta {
+        return ErrorRespuesta(e.message!!, request.requestURI)
+    }
+
+    @ExceptionHandler(ForbiddenException::class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ResponseBody
+    fun handleForbiddenException(request: HttpServletRequest, e: Exception) : ErrorRespuesta {
         return ErrorRespuesta(e.message!!, request.requestURI)
     }
 

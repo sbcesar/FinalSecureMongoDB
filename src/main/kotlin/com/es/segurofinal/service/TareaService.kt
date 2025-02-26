@@ -6,6 +6,7 @@ import com.es.segurofinal.error.exception.ConflictException
 import com.es.segurofinal.error.exception.ForbiddenException
 import com.es.segurofinal.error.exception.NotFoundException
 import com.es.segurofinal.models.Estado
+import com.es.segurofinal.models.Role
 import com.es.segurofinal.models.Tarea
 import com.es.segurofinal.repository.TareaRepository
 import com.es.segurofinal.repository.UsuarioRepository
@@ -101,8 +102,8 @@ class TareaService {
             NotFoundException("Task not found")
         }
 
-        // Comprobamos que la tarea sea del usuario
-        if (tareaExistente.usuario.username != usuarioLogueado.username) {
+        // Si el usuario no es ADMIN, verificamos que sea el dueño de la tarea
+        if (usuarioLogueado.roles != Role.ADMIN && tareaExistente.usuario.username != usuarioLogueado.username) {
             throw ForbiddenException("You are not allowed to update this task")
         }
 
@@ -122,9 +123,9 @@ class TareaService {
             NotFoundException("Task not found")
         }
 
-        // Comprobamos que la tarea sea del usuario
-        if (tareaExistente.usuario.username != usuarioLogueado.username) {
-            throw ForbiddenException("You are not allowed to update this task")
+        // Si el usuario no es ADMIN, verificamos que sea el dueño de la tarea
+        if (usuarioLogueado.roles != Role.ADMIN && tareaExistente.usuario.username != usuarioLogueado.username) {
+            throw ForbiddenException("You are not allowed to delete this task")
         }
 
         tareaRepository.deleteById(id)

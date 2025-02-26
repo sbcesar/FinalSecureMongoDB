@@ -108,87 +108,80 @@ Esta es una imagen de un login inválido (contraseña incorrecta)
 
 * seeAllTasks (/tareas/show)
 
-![""]()
+Ver todas las tareas rol **USER** (Forbidden) -- Funciona
 
 ![""]()
 
-![""]()
+Ver todas las tareas rol **ADMIN** -- Funciona
 
 ![""]()
 
-![""]()
+Ver todas las tareas rol **ADMIN** (Unauthorized) -- Funciona
 
 ![""]()
 
 * getMyTasks (/tareas/showTask)
 
-![""]()
+Ver mis tareas rol **USER** -- Funciona
 
 ![""]()
 
-![""]()
-
-![""]()
-
-![""]()
-
-![""]()
+Ver mis tareas rol **USER** (no propietario) -- Funciona porque solo puedo ver las del propio usuario logueado
 
 * createTask (/tareas/create)
 
-![""]()
+Tarea creada con usuario **ADMIN** -- Funciona
 
 ![""]()
 
-![""]()
+Tarea creada con usuario **ADMIN** (se usa el id de otro usuario) -- Funciona
 
 ![""]()
 
-![""]()
+Tarea creada con usuario **ADMIN** (campos vacios) -- Funciona (menos en estado)
 
 ![""]()
 
-* updateTask (/tareas/update)
+Tarea creada con usuario **USER** -- Funciona
 
 ![""]()
 
-![""]()
+* updateTask (/tareas/update) -- No lo pide la rubrica pero está hecho en código
 
-![""]()
-
-![""]()
-
-![""]()
-
-![""]()
 
 * completeTask (/tareas/complete/{id})
 
-![""]()
+Completar una tarea **USER** (Forbidden) -- Funciona
 
 ![""]()
 
-![""]()
+Completar una tarea **USER** -- Funciona
 
 ![""]()
 
-![""]()
+Completar una tarea **USER** (Conflict) -- Funciona
 
 ![""]()
+
+Completar una tarea **ADMIN** -- Funciona
+
+![""]()
+
 
 * deleteTask (/tareas/delete/{id})
 
-![""]()
+Borrar tarea **ADMIN** -- Funciona
 
 ![""]()
 
-![""]()
+Borrar tarea **USER** otro usuario (Unauthorized) -- Funciona
 
 ![""]()
 
-![""]()
+Borrar tarea **USER** -- Funciona
 
 ![""]()
+
 
 
 ### SCREENSHOTS INICIALES
