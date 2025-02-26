@@ -41,7 +41,6 @@ dependencies {
 	implementation("org.mongodb:mongodb-driver-kotlin-sync:5.3.0")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-	implementation("io.github.cdimascio:dotenv-kotlin:6.4.2")
 }
 
 kotlin {

@@ -37,6 +37,18 @@ class UsuarioService : UserDetailsService {
             .build()
     }
 
+    fun findByUsername(username: String): UsuarioDTO? {
+        val usuario = usuarioRepository.findByUsername(username).orElse(null) ?: return null
+
+        val usuarioDTO = UsuarioDTO(
+            username = usuario.username,
+            roles = usuario.roles,
+            direccion = usuario.direccion
+        )
+
+        return usuarioDTO
+    }
+
     fun insertUser(usuarioRegisterDTO: UsuarioRegisterDTO): UsuarioDTO? {
 
         val usuarioFound = usuarioRepository.findByUsername(usuarioRegisterDTO.username)

@@ -1,5 +1,6 @@
 package com.es.segurofinal.error
 
+import com.es.segurofinal.error.exception.ConflictException
 import com.es.segurofinal.error.exception.UnauthorizedException
 import com.es.segurofinal.error.exception.ValidationException
 import jakarta.servlet.http.HttpServletRequest
@@ -33,6 +34,20 @@ class APIExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     fun handleValidationException(request: HttpServletRequest, e: ValidationException): ErrorRespuesta {
+        return ErrorRespuesta(e.message!!, request.requestURI)
+    }
+
+    @ExceptionHandler(NotImplementedError::class)
+    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
+    @ResponseBody
+    fun handleNotImplementedError(request: HttpServletRequest, e: Exception) : ErrorRespuesta {
+        return ErrorRespuesta(e.message!!, request.requestURI)
+    }
+
+    @ExceptionHandler(ConflictException::class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ResponseBody
+    fun handleConflictException(request: HttpServletRequest, e: Exception) : ErrorRespuesta {
         return ErrorRespuesta(e.message!!, request.requestURI)
     }
 

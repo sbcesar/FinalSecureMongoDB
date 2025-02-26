@@ -34,7 +34,7 @@ class UsuarioController {
         @RequestBody usuarioRegisterDTO: UsuarioRegisterDTO
     ) : ResponseEntity<UsuarioDTO>? {
 
-        Utils.verificarDatosUsuario(usuarioRegisterDTO)
+        Utils.verificarDatosUsuarioRegisterDTO(usuarioRegisterDTO)
 
         val nuevousuario = usuarioService.insertUser(usuarioRegisterDTO)
         return if (nuevousuario == null) {

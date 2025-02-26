@@ -9,6 +9,6 @@ data class Tarea(
     val _id: String?,
     val titulo: String,
     val descripcion: String,
-    val estado: Estado,
+    var estado: Estado = Estado.PENDIENTE,
     val usuario: Usuario
 )
