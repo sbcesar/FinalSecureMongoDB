@@ -5,6 +5,7 @@ import com.es.segurofinal.dto.UsuarioDTO
 import com.es.segurofinal.error.exception.ConflictException
 import com.es.segurofinal.error.exception.ForbiddenException
 import com.es.segurofinal.error.exception.NotFoundException
+import com.es.segurofinal.error.exception.UnauthorizedException
 import com.es.segurofinal.models.Estado
 import com.es.segurofinal.models.Role
 import com.es.segurofinal.models.Tarea
@@ -47,6 +48,8 @@ class TareaService {
         }
 
         if (usuarioAsignado == null) throw NotFoundException("Usuario no encontrado porque es nulo")
+
+        if (usuarioAsignado.roles == Role.USER && usuarioAsignado._id != tareaDTO.usuarioId) throw UnauthorizedException("No puedes crear una tarea en otro usuario")
 
         // Verificar los datos de la tarea
         Utils.verificarDatosTarea(tareaDTO, usuarioAsignado)

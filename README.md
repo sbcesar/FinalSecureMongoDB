@@ -152,13 +152,11 @@ Esta es una imagen de un login inválido (contraseña incorrecta)
 
 **Respuesta**: 201 Created - Crea la tarea con el id aportado
 
-!["Se loguea como admin"]()
+!["201 CREATED"](src/main/resources/documentation/tarea%20creada%20con%20rol%20admin%20otro%20usuario.png)
 
-Tarea creada con usuario **ADMIN** (se usa el id de otro usuario) -- No funciona, revisar porque usa el usuario admin, no el que introduces
+**Enunciado**: Usuario autenticado con rol **ADMIN**
 
-![""]()
-
-Tarea creada con usuario **ADMIN** (campos vacios) (menos en estado)
+**Respuesta**: 400 Bad Request - Los campos están vacíos
 
 !["Falta titulo"](src/main/resources/documentation/tarea%20creada%20usuario%20vacio.png)
 
@@ -166,11 +164,16 @@ Tarea creada con usuario **ADMIN** (campos vacios) (menos en estado)
 
 !["Falta id de usuario"](src/main/resources/documentation/tarea%20creada%20usuario%20id%20vacio.png)
 
-Tarea creada con usuario **USER**
+**Enunciado**: Usuario autenticado con rol **USER**
 
-![""](src/main/resources/documentation/tarea%20creada%20con%20user.png)
+**Respuesta**: 201 CREATED - Crea la tarea
+
+!["201 CREATED"](src/main/resources/documentation/tarea%20creada%20con%20user.png)
 
 Tarea creada con usuario **USER** (se usa id de otro usuario) -- No funciona,pilla el usuario que esta registrado, no el nuevo
+**Enunciado**: Usuario autenticado con rol **USER**
+
+**Respuesta**: 400 Bad Request - Los campos están vacíos
 
 ![""]()
 
