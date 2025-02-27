@@ -107,30 +107,51 @@ Esta es una imagen de un login inválido (contraseña incorrecta)
 #### TAREAS
 
 * seeAllTasks (/tareas/show)
+  
+   Este endpoint muestra todas las tareas existentes de la base de datos y solo es accesible mediante los usuarios que tengan el rol **ADMIN**, de lo contrario te saltará un error 403 Forbidden que indica que no tienes permisos para acceder a este endpoint.
 
-Ver todas las tareas rol **USER** (Forbidden)
+**Enunciado**: Usuario autenticado con rol **USER**
 
-!["Login user"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20login%20user.png)
+**Respuesta**: 403 Forbidden - Inicias sesion con un rol que no es admin
 
-Ver todas las tareas rol **ADMIN**
+!["403 Forbidden Error"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20login%20user.png)
 
-!["Login Admin"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20login%20admin.png)
+**Enunciado**: Usuario autenticado con rol **ADMIN**
 
-Ver todas las tareas rol **ADMIN** (Unauthorized)
+**Respuesta**: 200 Ok - Muestra todas las tareas
+
+!["200 OK"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20login%20admin.png)
+
+**Enunciado**: Usuario no se ha autenticado
+
+**Respuesta**: 401 Unauthorized - No se ha autenticado correctamente
 
 !["No pones token"](src/main/resources/documentation/mostrar%20todas%20las%20tareas%20no%20toke.png)
 
 * getMyTasks (/tareas/showTask)
 
-Ver mis tareas rol **USER**
+   Este endpoint muestra las tareas propias del usuario logueado previamente, si tiene permisos de **USER** muestra todas sus tareas, si es **ADMIN** no te deja usar el endpoint.
 
-!["Muestra solo las del usuario registrado"](src/main/resources/documentation/Mostrar%20tarea%20propia%20login%20user.png)
+**Enunciado**: Usuario autenticado con rol **USER**
 
-Ver mis tareas rol **USER** (no propietario) -- Funciona porque solo puedo ver las del propio usuario logueado
+**Respuesta**: 200 OK - Muestra todas las tareas propias
+
+!["200 OK"](src/main/resources/documentation/Mostrar%20tarea%20propia%20login%20user.png)
+
+**Enunciado**: Usuario autenticado con rol **ADMIN**
+
+**Respuesta**: 403 Forbidden - No tienes permisos para acceder al endpoint
+
+!["403 Forbidden"](src/main/resources/documentation/mostrar%20tareas%20propias%20rol%20admin.png)
 
 * createTask (/tareas/create)
 
+   Este endpoint crea una tarea introduciendole los campos de TareaDTO, si estás logueado como un usuario solo tienes acceso a crear tareas propias, si estás logueado como administrador puedes crear tareas a cualquier usuario con el id especificado (obviamente en el JSON)
+
 Tarea creada con usuario **ADMIN**
+**Enunciado**: Usuario autenticado con rol **ADMIN**
+
+**Respuesta**: 201 Created - Crea la tarea con el id aportado
 
 !["Se loguea como admin"](src/main/resources/documentation/Tarea%20creada%20con%20usuario%20admin.png)
 
