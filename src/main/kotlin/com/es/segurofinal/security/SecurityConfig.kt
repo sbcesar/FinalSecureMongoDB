@@ -39,7 +39,7 @@ class SecurityConfig {
             .authorizeHttpRequests { auth -> auth
 
                 // Usuario
-                .requestMatchers(HttpMethod.POST, "usuario/login").permitAll()
+                .requestMatchers(HttpMethod.POST, "/usuario/register").permitAll()
                 .requestMatchers(HttpMethod.POST, "/usuario/login").permitAll()
 
                 // Usuario con rol USER
