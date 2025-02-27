@@ -37,17 +37,19 @@ class TareaService {
     fun createTask(tareaDTO: TareaDTO, usuarioDTO: UsuarioDTO): Tarea {
 
         // Buscamos el usuario en la db y lo extraemos
-        val usuario = if (usuarioDTO.roles == Role.ADMIN) {
+        val usuarioAsignado = if (usuarioDTO.roles == Role.ADMIN) {
             usuarioRepository.findById(tareaDTO.usuarioId).orElseThrow {
-                NotFoundException("Usuario con id ${tareaDTO.usuarioId} not found")
+                NotFoundException("Usuario con ID ${tareaDTO.usuarioId} not found")
             }
         } else {
             usuarioRepository.findByUsername(usuarioDTO.username)
                 .orElseThrow { NotFoundException("Usuario no encontrado") }
         }
 
+        if (usuarioAsignado == null) throw NotFoundException("Usuario no encontrado porque es nulo")
+
         // Verificar los datos de la tarea
-        Utils.verificarDatosTarea(tareaDTO, usuario)
+        Utils.verificarDatosTarea(tareaDTO, usuarioAsignado)
 
         // Conversion de TareaDTO a Tarea para implementarla en la bd
         val tarea = Tarea(
@@ -55,7 +57,7 @@ class TareaService {
             titulo = tareaDTO.titulo,
             descripcion = tareaDTO.descripcion,
             estado = tareaDTO.estado,
-            usuario = usuario
+            usuario = usuarioAsignado
         )
 
         return tareaRepository.save(tarea)

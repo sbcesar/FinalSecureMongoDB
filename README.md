@@ -148,12 +148,11 @@ Esta es una imagen de un login inválido (contraseña incorrecta)
 
    Este endpoint crea una tarea introduciendole los campos de TareaDTO, si estás logueado como un usuario solo tienes acceso a crear tareas propias, si estás logueado como administrador puedes crear tareas a cualquier usuario con el id especificado (obviamente en el JSON)
 
-Tarea creada con usuario **ADMIN**
 **Enunciado**: Usuario autenticado con rol **ADMIN**
 
 **Respuesta**: 201 Created - Crea la tarea con el id aportado
 
-!["Se loguea como admin"](src/main/resources/documentation/Tarea%20creada%20con%20usuario%20admin.png)
+!["Se loguea como admin"]()
 
 Tarea creada con usuario **ADMIN** (se usa el id de otro usuario) -- No funciona, revisar porque usa el usuario admin, no el que introduces
 
