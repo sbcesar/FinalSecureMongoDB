@@ -61,4 +61,16 @@ class UsuarioController {
 
         return ResponseEntity(mapOf("token" to token), HttpStatus.CREATED)
     }
+
+    @GetMapping("/nombre")
+    fun getUsernameFromAuthentication(authentication: Authentication): ResponseEntity<Map<String, String>> {
+
+        val username = authentication.name
+
+        return if (username != null) {
+            ResponseEntity(mapOf("username" to username), HttpStatus.OK)
+        } else {
+            ResponseEntity(mapOf("message" to "No se encontró el nombre de usuario"), HttpStatus.UNAUTHORIZED)
+        }
+    }
 }
